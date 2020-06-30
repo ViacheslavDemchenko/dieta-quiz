@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'UniNeueRegular-Italic';
+  src: url('UniNeueRegular-Italic.eot');
+  src: url('UniNeueRegular-Italic.eot?#iefix') format('embedded-opentype'),
+       url('UniNeueRegular-Italic.svg#UniNeueRegular-Italic') format('svg'),
+       url('UniNeueRegular-Italic.ttf') format('truetype'),
+       url('UniNeueRegular-Italic.woff') format('woff'),
+       url('UniNeueRegular-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
