@@ -55,6 +55,17 @@ body {
   overflow: hidden;
 }
 
+.overlay {
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: rgba(27, 19, 45, 0.95);
+}
+
 /* Box-sizing-model */
 
 *,
@@ -622,8 +633,8 @@ template {
 .footer {
   position: relative;
   width: 100%;
-  padding: 5.625rem 0.625rem 0.625rem 0.625rem;
-  margin-top: -2.25rem;
+  padding: 5.625rem 0.625rem 2.5rem 0.625rem;
+  margin-top: -3.125rem;
   background-repeat: no-repeat !important;
   background-position: center;
   background-size: cover !important;
@@ -651,7 +662,7 @@ template {
   font-weight: 400;
   font-style: normal;
   font-size: 2.375rem;
-  line-height: 0.684;
+  line-height: 1.625rem;
 }
 
 .footer-logo--yellow {
@@ -681,6 +692,7 @@ template {
   font-style: normal;
   font-size: 1rem;
   line-height: 1.625;
+  letter-spacing: 0.04em;
   color: #fefefe;
 }
 
@@ -706,7 +718,7 @@ template {
 .content {
   position: relative;
   width: 100%;
-  height: 41.25rem;
+  min-height: 41.25rem;
   background-color: #cbdcea;
 }
 
@@ -715,61 +727,41 @@ template {
   position: relative;
 }
 
-.quiz-sex {
+.quiz-slide {
   width: 100%;
   position: relative;
-  height: 41.25rem;
+  min-height: 41.875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background: url(../img/quiz-sex-bg-mobile.png);
 }
 
-.quiz-sex img {
+.quiz-slide img {
   width: 100%;
   height: 100%;
 }
 
-.quiz-sex__left-active::after {
-  position: absolute;
-  content: "";
-  right: 0;
-  width: 54%;
-  height: 100%;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background: url(../img/overlay-right.png);
-}
-
-.quiz-sex__right-active::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  width: 57%;
-  height: 100%;
-  transform: rotate(180deg);
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background: url(../img/overlay-left.png);
-}
-
-.quiz-sex__content {
+.quiz-slide__content {
   position: relative;
   z-index: 100;
+  max-width: 18.125rem;
   text-align: center;
-  padding: 0.75rem 1.625rem 0.75rem 1.625rem;
-  margin: 12.5rem 0 0.5rem 0;
+  padding: 0.875rem 1.875rem 0.9375rem 1.875rem;
+  margin: 12.75rem 0 0.5rem 0;
   border: 0.125rem solid #fefefe;
   border-radius: 1.25rem 2rem;
-  background: #563e90;
+  background: linear-gradient(90deg, #573f91 0%, #7a62b3 100%);
 }
 
-.quiz-sex__content-title {
+.quiz-slide__content-second {
+  margin: 11.5625rem 0 0.5rem 0;
+}
+
+.quiz-slide__content-third {
+  margin: 10.375rem 0 0.8125rem 0;
+}
+
+.quiz-slide__content-title {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
@@ -778,18 +770,23 @@ template {
   color: #fefefe;
 }
 
-.quiz-sex__choice {
+.quiz-slide__choice {
   position: relative;
   z-index: 100;
-  width: 21.25rem;
-  height: 17.375rem;
+  max-width: 21.25rem;
+  min-height: 18.9375rem;
   opacity: 0.98;
-  padding: 1.75rem 1.875rem;
+  padding: 0.875rem 2.1875rem 1.25rem 2.1875rem;
   background-color: #fefefe;
   border-radius: 3.125rem;
 }
 
-.quiz-sex__percent {
+.quiz-slide__choice-third {
+  padding: 2.5rem 2.1875rem 1.25rem 2.1875rem;
+}
+
+.quiz-slide__percent {
+  display: inline-block;
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
@@ -798,11 +795,27 @@ template {
   color: #3a4148;
 }
 
-.quiz-sex__range {
-  margin-bottom: 1.875rem;
+.quiz-slide__percent--first {
+  transform: translateX(0.8125rem);
 }
 
-.quiz-sex-icons {
+.quiz-slide__percent--second {
+  transform: translateX(4.0625rem);
+}
+
+.quiz-slide__percent--third {
+  transform: translateX(7.375rem);
+}
+
+.quiz-slide__percent--fourth {
+  transform: translateX(10.8125rem);
+}
+
+.quiz-slide__range {
+  margin-bottom: 1.8125rem;
+}
+
+.quiz-slide-icons {
   display: flex;
   justify-content: space-between;
 }
@@ -811,7 +824,8 @@ template {
   display: inline-block;
   width: 3.375rem;
   height: 0.5rem;
-  background-color: #f5efdf;
+  border-radius: 0.25rem 0 0 0.25rem;
+  background: #f5efdf;
 }
 
 .range-line:first-child {
@@ -822,12 +836,14 @@ template {
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
-.range-line--border {
+.range-line:not(:last-child) {
   border-right: 0.125rem solid #deb02c;
 }
 
 .range-line--active {
-  background-color: #f8c941;
+  border-radius: 0;
+  box-shadow: 0 0 0.75rem 0 #ecb845;
+  background: #f8c941;
 }
 
 .female,
@@ -847,7 +863,7 @@ template {
 
 .sex::after {
   position: absolute;
-  content: "";
+  content: '';
   bottom: 0.4375rem;
   right: 0.5rem;
   width: 1.9375rem;
@@ -863,7 +879,7 @@ template {
 
 .sex--active::after {
   position: absolute;
-  content: "";
+  content: '';
   bottom: 0.4375rem;
   right: 0.5rem;
   width: 1.9375rem;
@@ -873,7 +889,7 @@ template {
   box-shadow: 0 0 0.3125rem 0 rgba(0, 0, 0, 0.2);
 }
 
-.quiz-sex-icon {
+.quiz-slide-icon {
   width: 3.625rem;
   height: 4.6875rem;
 }
@@ -892,14 +908,14 @@ template {
   fill: #fefefe;
 }
 
-.quiz-sex-titles {
+.quiz-slide-titles {
   display: flex;
   justify-content: space-between;
   padding: 0 1.75rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
-.quiz-sex__title {
+.quiz-slide__title {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
@@ -908,19 +924,15 @@ template {
   color: #cacaca;
 }
 
-.quiz-sex__title--active {
+.quiz-slide__title--active {
   color: #3a4148;
 }
 
 .quiz-arrows {
-  position: absolute;
-  z-index: 200;
   display: flex;
   justify-content: space-between;
   width: 17.125rem;
-  bottom: 1.875rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 0.625rem;
 }
 
 .arrow__left {
@@ -957,10 +969,607 @@ template {
 .arrow-icon-left {
   position: absolute;
   top: 50%;
-  right: calc(50% + 6px);
+  right: calc(50% + 8px);
   transform: translate(calc(50% + 5px), -50%);
   width: 0.6875rem;
   height: 1.125rem;
+}
+
+/* Second slide */
+
+.quiz-slide-checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-slide-checkbox input,
+.quiz-slide-checkbox label {
+  position: relative;
+  padding: 0 0 0 2.1875rem;
+  cursor: pointer;
+}
+
+.quiz-slide-checkbox label {
+  margin-left: 1.25rem;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  color: #3a4148;
+}
+
+.quiz-slide-checkbox input {
+  position: absolute;
+  z-index: -1;
+  margin: 0.625rem 0 0 0.4375rem;
+  opacity: 0;
+  border: none;
+}
+
+.quiz-slide-checkbox input + label::before,
+.quiz-slide-checkbox input:checked + label::before,
+.quiz-slide-checkbox input + label::after,
+.quiz-slide-checkbox input:checked + label::after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  border: none;
+}
+
+.quiz-slide-checkbox input + label::before,
+.quiz-slide-checkbox input:checked + label::before {
+  z-index: 200;
+  top: 0.5rem;
+  left: -0.6875rem;
+  width: 0.6875rem;
+  height: 0.6875rem;
+}
+
+.quiz-slide-checkbox input + label::before {
+  background: #f3f9f9;
+}
+
+.quiz-slide-checkbox input + label::after,
+.quiz-slide-checkbox input:checked + label::after {
+  top: -0.125rem;
+  left: -1.3125rem;
+  width: 1.9375rem;
+  height: 1.9375rem;
+}
+
+.quiz-slide-checkbox input + label::after {
+  background: #dbe2ea;
+}
+
+.quiz-slide-checkbox input:checked + label::before {
+  background: #fff;
+}
+
+.quiz-slide-checkbox input:checked + label::after {
+  background: linear-gradient(90deg, #ebb845 0%, #f7c754 100%);
+}
+
+.checkbox-block {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem 0.75rem 0.625rem;
+  border: 0.0625rem solid #9faab4;
+  border-radius: 1.625rem;
+}
+
+.checkbox-block:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+
+/* BG Slides */
+
+.quiz-slide-first {
+  background-repeat: no-repeat !important;
+  background-position: 100% 100% !important;
+  background-size: cover !important;
+  background: url(../img/first-slide-bg-mobile@2x.jpg);
+}
+
+.quiz-slide-second {
+  display: none;
+  min-height: 41.5625rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/second-slide-bg-mobile@1x.jpg);
+}
+
+.quiz-slide-third {
+  display: none;
+  min-height: 53.75rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/third-slide-bg-mobile@1x.jpg);
+}
+
+.question-mark {
+  position: absolute;
+  top: 1rem;
+  right: 1.0625rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.125rem solid #594193;
+  border-radius: 50%;
+  background-color: #e2e9f2;
+}
+
+.exercices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.quantaty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6.25rem;
+  min-height: 4.375rem;
+  margin-bottom: 0.1875rem;
+  background: #dbe2ea;
+  border-radius: 1.25rem;
+}
+
+.quantaty--active {
+  background: #f8fafb;
+  border: 0.125rem solid #f4bb40;
+}
+
+.exercice-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 6.25rem;
+}
+
+.exercice-block:not(:last-child) {
+  margin-bottom: 1.3125rem;
+}
+
+.exercice-num {
+  margin-bottom: 0.625rem;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.125rem;
+  line-height: 1.25rem;
+  color: #a2adb7;
+}
+
+.exercice-num--active {
+  color: #3a4148;
+}
+
+.exercice-text {
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  color: #a2adb7;
+}
+
+.exercice-text--active {
+  color: #3a4148;
+}
+
+.intensity {
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  color: #a2adb7;
+}
+
+.intensity--active {
+  color: #3a4148;
+}
+
+.quiz-slide-third-modal {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 21.25rem;
+  overflow: hidden;
+  display: none;
+  background: #f8fefe;
+  border-radius: 3.125rem;
+}
+
+.quiz-slide-third-modal .close {
+  position: absolute;
+  top: 1rem;
+  right: 1.0625rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  padding-bottom: 0.25rem;
+  border: 0.125rem solid #594193;
+  border-radius: 50%;
+  background-color: #e2e9f2;
+  cursor: pointer;
+}
+
+.quiz-slide-third-modal .exercice-wrap {
+  display: flex;
+  align-items: center;
+  border-top: 0.0625rem solid #eaeaea;
+}
+
+.quiz-slide-third-modal .exercice-wrap:nth-child(odd) .exercice-description {
+  background: #eff8f8;
+}
+
+.quiz-slide-third-modal .exercice-wrap:first-child {
+  height: 3.8125rem;
+}
+
+.quiz-slide-third-modal .exercice-wrap:last-child .exercice-quantaty {
+  height: 5.9375rem;
+}
+
+.quiz-slide-third-modal .exercice-wrap:last-child .exercice-quantaty p {
+  transform: translateY(-1rem);
+}
+
+.quiz-slide-third-modal .exercice-wrap:last-child .exercice-description {
+  transform: translateY(-0.1875rem);
+}
+
+.quiz-slide-third-modal .exercice-quantaty {
+  width: 23.53%;
+  min-height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.0625rem solid #d9d5e0;
+  border-top: 0.0625rem solid #d9d5e0;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.125rem;
+  line-height: 1.625rem;
+  color: #664e9d;
+  background: #ebe8f3;
+}
+
+.quiz-slide-third-modal .exercice-description {
+  width: 76.47%;
+  min-height: 4rem;
+  padding-left: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  color: #3a4148;
+  background: #f8fefe;
+}
+
+.quiz-slide-fourth {
+  display: none;
+  min-height: 42.9375rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/fourth-slide-bg-mobile.jpg);
+}
+
+.quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(1) .check-yellow {
+  position: absolute;
+  top: 108px;
+  left: 56px;
+  fill: #fefefe;
+}
+
+.quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(1)::after {
+  position: absolute;
+  z-index: 500;
+  content: "";
+  top: 98px;
+  left: 3rem;
+  width: 1.9375rem;
+  height: 1.9375rem;
+  border-radius: 50%;
+  background: #dbe2ea;
+}
+
+.quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(2) .check-yellow {
+  position: absolute;
+  top: 178px;
+  left: 56px;
+  fill: #fefefe;
+}
+
+.quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(2)::after {
+  position: absolute;
+  z-index: 500;
+  content: "";
+  top: 168px;
+  left: 3rem;
+  width: 1.9375rem;
+  height: 1.9375rem;
+  background: #dbe2ea;
+  border-radius: 50%;
+}
+
+.quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(3) .check-yellow {
+  position: absolute;
+  top: 247px;
+  left: 56px;
+  fill: #fefefe;
+}
+
+.quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(3)::after {
+  position: absolute;
+  z-index: 500;
+  content: "";
+  top: 237px;
+  left: 3rem;
+  width: 1.9375rem;
+  height: 1.9375rem;
+  background: #dbe2ea;
+  border-radius: 50%;
+}
+
+.quiz-slide-fourth .quiz-slide-measure .input-wrap--active .check-yellow {
+  fill: #f4bb40;
+}
+
+.quiz-slide-fourth .quiz-slide-measure .input-wrap--active::after {
+  position: absolute;
+  z-index: 500;
+  content: "";
+  top: 237px;
+  left: 3rem;
+  width: 1.9375rem;
+  height: 1.9375rem;
+  background: transparent !important;
+  border-radius: 50%;
+  border: 0.0625rem solid #f4bb40;
+}
+
+.form__group.field {
+  /* reset input */
+}
+
+.form__group.field .form__group {
+  position: relative;
+  padding: 0.9375rem 0 0;
+  margin-top: 0.625rem;
+  width: 50%;
+}
+
+.form__group.field .form__field {
+  width: 100%;
+  font-size: 20px;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  color: #3a4148;
+  line-height: 1.3;
+  outline: none;
+  padding: 13px 10px 13px 55px;
+  border: 1.0px solid #9faab4;
+  border-radius: 25.5px;
+}
+
+.form__group.field .form__field:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+
+.form__group.field .form__field::-moz-placeholder {
+  color: transparent;
+}
+
+.form__group.field .form__field:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form__group.field .form__field::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form__group.field .form__field::placeholder {
+  color: transparent;
+}
+
+.form__group.field .form__field:-moz-placeholder-shown ~ .form__label-first {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 102px;
+  left: 90px;
+}
+
+.form__group.field .form__field:-ms-input-placeholder ~ .form__label-first {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 102px;
+  left: 90px;
+}
+
+.form__group.field .form__field:placeholder-shown ~ .form__label-first {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 102px;
+  left: 90px;
+}
+
+.form__group.field .form__field:-moz-placeholder-shown ~ .form__label-second {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 170px;
+  left: 90px;
+}
+
+.form__group.field .form__field:-ms-input-placeholder ~ .form__label-second {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 170px;
+  left: 90px;
+}
+
+.form__group.field .form__field:placeholder-shown ~ .form__label-second {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 170px;
+  left: 90px;
+}
+
+.form__group.field .form__field:-moz-placeholder-shown ~ .form__label-third {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 238px;
+  left: 90px;
+}
+
+.form__group.field .form__field:-ms-input-placeholder ~ .form__label-third {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 238px;
+  left: 90px;
+}
+
+.form__group.field .form__field:placeholder-shown ~ .form__label-third {
+  position: absolute;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.444;
+  color: #cacaca;
+  cursor: text;
+  top: 238px;
+  left: 90px;
+}
+
+.form__group.field .form__label-first {
+  position: absolute;
+  top: 93px;
+  left: 183px;
+  display: block;
+  color: #3a4148;
+  transition: 0.2s;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.form__group.field .form__label-second {
+  position: absolute;
+  top: 160px;
+  left: 220px;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.form__group.field .form__label-third {
+  position: absolute;
+  top: 230px;
+  left: 230px;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.form__group.field .form__field:focus ~ .form__label-first {
+  position: absolute;
+  top: 93px;
+  left: 183px;
+  display: block;
+  color: #3a4148;
+  transition: 0.2s;
+  font-size: 0.875rem;
+}
+
+.form__group.field .form__field:focus ~ .form__label-second {
+  position: absolute;
+  top: 160px;
+  left: 215px;
+  display: block;
+  transition: 0.2s;
+  color: #3a4148;
+  font-size: 0.875rem;
+}
+
+.form__group.field .form__field:focus ~ .form__label-third {
+  position: absolute;
+  top: 230px;
+  left: 230px;
+  display: block;
+  transition: 0.2s;
+  color: #3a4148;
+  font-size: 0.875rem;
 }
 
 /* BLOCKS */
