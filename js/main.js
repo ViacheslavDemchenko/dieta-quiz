@@ -151,6 +151,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   e.Modernizr = Modernizr;
 }(window, document);
 "use strict";
+
+$(document).ready(function () {
+  $('.owl-carousel').owlCarousel({
+    items: 1,
+    autoWidth: true
+  });
+});
 "use strict";
 
 /*!

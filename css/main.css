@@ -631,10 +631,11 @@ template {
 /* SECTIONS */
 
 .footer {
-  position: relative;
+  position: absolute;
+  z-index: 1000;
   width: 100%;
   padding: 5.625rem 0.625rem 2.5rem 0.625rem;
-  margin-top: -3.125rem;
+  margin-top: -4.6875rem;
   background-repeat: no-repeat !important;
   background-position: center;
   background-size: cover !important;
@@ -718,7 +719,7 @@ template {
 .content {
   position: relative;
   width: 100%;
-  min-height: 41.25rem;
+  min-height: 53.75rem;
   background-color: #cbdcea;
 }
 
@@ -729,8 +730,9 @@ template {
 
 .quiz-slide {
   width: 100%;
+  width: 480px;
   position: relative;
-  min-height: 41.875rem;
+  min-height: 53.75rem;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -1076,7 +1078,6 @@ template {
 }
 
 .quiz-slide-second {
-  min-height: 41.5625rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
@@ -1084,7 +1085,6 @@ template {
 }
 
 .quiz-slide-third {
-  min-height: 53.75rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
@@ -1269,7 +1269,6 @@ template {
 }
 
 .quiz-slide-fourth {
-  min-height: 42.9375rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
@@ -1518,7 +1517,6 @@ template {
 }
 
 .quiz-slide.quiz-slide-fifth {
-  min-height: 42.9375rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
@@ -1548,6 +1546,15 @@ template {
 
 .dieta-type__text {
   text-align: center;
+}
+
+.program-calc {
+  width: 100%;
+  min-height: 38.0625rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/program-calc-bg-mobile@1x.jpg);
 }
 
 /* BLOCKS */
@@ -1614,7 +1621,7 @@ template {
   }
 
   .container {
-    width: 21.25rem;
+    width: 30rem;
   }
 }
 
