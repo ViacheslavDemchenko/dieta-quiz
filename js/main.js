@@ -151,6 +151,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   e.Modernizr = Modernizr;
 }(window, document);
 "use strict";
+"use strict";
 
 /*!
  * @copyright Copyright (c) 2017 IcoMoon.io
