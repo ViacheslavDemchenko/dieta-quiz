@@ -46,9 +46,11 @@ body {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+  min-width: 17.5rem;
   max-width: 85.3125rem;
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .no-scroll {
@@ -64,6 +66,10 @@ body {
   right: 0;
   display: none;
   background-color: rgba(27, 19, 45, 0.95);
+}
+
+.owl-dots {
+  display: none;
 }
 
 /* Box-sizing-model */
@@ -634,16 +640,21 @@ template {
   position: absolute;
   z-index: 1000;
   width: 100%;
-  padding: 5.625rem 0.625rem 2.5rem 0.625rem;
+  padding: 4.375rem 0.625rem 1.5625rem 0.625rem;
   margin-top: -4.6875rem;
   background-repeat: no-repeat !important;
-  background-position: center;
-  background-size: cover !important;
-  background: url(../img/footer-bg-mobile.png);
+  background-position: center !important;
+  background-size: 104% 100% !important;
+  background: url(../img/footer-bg-320@1x.png);
 }
 
 .footer__inner {
   text-align: center;
+}
+
+.footer--program-calc {
+  position: static;
+  margin-top: -2.8125rem;
 }
 
 .nav__link {
@@ -653,7 +664,7 @@ template {
   font-family: "UniNeueRegular";
   font-weight: 400;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.3;
   color: #fefefe;
 }
@@ -662,8 +673,8 @@ template {
   font-family: "Satisfy-Regular";
   font-weight: 400;
   font-style: normal;
-  font-size: 2.375rem;
-  line-height: 1.625rem;
+  font-size: 1.875rem;
+  line-height: 1.125rem;
 }
 
 .footer-logo--yellow {
@@ -691,7 +702,7 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1rem;
+  font-size: 0.75rem;
   line-height: 1.625;
   letter-spacing: 0.04em;
   color: #fefefe;
@@ -711,7 +722,7 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.625;
   color: #2c1d4d;
 }
@@ -730,61 +741,64 @@ template {
 
 .quiz-slide {
   width: 100%;
-  width: 480px;
   position: relative;
-  min-height: 53.75rem;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
 }
 
-.quiz-slide img {
-  width: 100%;
-  height: 100%;
-}
-
 .quiz-slide__content {
   position: relative;
   z-index: 100;
-  max-width: 18.125rem;
   text-align: center;
   padding: 0.875rem 1.875rem 0.9375rem 1.875rem;
-  margin: 12.75rem 0 0.5rem 0;
   border: 0.125rem solid #fefefe;
   border-radius: 1.25rem 2rem;
   background: linear-gradient(90deg, #573f91 0%, #7a62b3 100%);
 }
 
+.quiz-slide__content-first {
+  margin: 13.4375rem 0 0.5rem 0;
+}
+
 .quiz-slide__content-second {
-  margin: 11.5625rem 0 0.5rem 0;
+  margin: 9.4375rem 0 0.5rem 0;
 }
 
 .quiz-slide__content-third {
-  margin: 10.375rem 0 0.8125rem 0;
+  margin: 8.625rem 0 0.5rem 0;
+}
+
+.quiz-slide__content-fourth {
+  margin: 11.1875rem 0 0.5rem 0;
+}
+
+.quiz-slide__content-fifth {
+  margin: 10.0625rem 0 0.5rem 0;
 }
 
 .quiz-slide__content-title {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1.625rem;
-  line-height: 1.625rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
   color: #fefefe;
 }
 
 .quiz-slide__choice {
   position: relative;
   z-index: 100;
-  max-width: 21.25rem;
-  min-height: 18.9375rem;
+  width: 18.75rem;
+  min-height: 14.375rem;
   opacity: 0.98;
-  padding: 0.875rem 2.1875rem 1.25rem 2.1875rem;
+  padding: 0.875rem 1.5625rem 0.9375rem 1.5625rem;
   background-color: #fefefe;
   border-radius: 3.125rem;
 }
 
 .quiz-slide__choice-third {
-  padding: 2.5rem 2.1875rem 1.25rem 2.1875rem;
+  padding: 1.875rem 2.1875rem 1.25rem 2.1875rem;
 }
 
 .quiz-slide__percent {
@@ -792,33 +806,35 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1rem;
-  line-height: 1.625rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   color: #3a4148;
 }
 
 .quiz-slide__percent--first {
-  transform: translateX(0.8125rem);
+  transform: translateX(2rem);
 }
 
 .quiz-slide__percent--second {
-  transform: translateX(4.0625rem);
+  transform: translateX(4.375rem);
 }
 
 .quiz-slide__percent--third {
-  transform: translateX(7.375rem);
+  transform: translateX(6.375rem);
 }
 
 .quiz-slide__percent--fourth {
-  transform: translateX(10.8125rem);
+  transform: translateX(9.4375rem);
 }
 
 .quiz-slide__percent--fifth {
-  transform: translateX(13.9375rem);
+  transform: translateX(11.75rem);
 }
 
 .quiz-slide__range {
-  margin-bottom: 1.8125rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5625rem;
 }
 
 .quiz-slide-icons {
@@ -828,7 +844,7 @@ template {
 
 .range-line {
   display: inline-block;
-  width: 3.375rem;
+  width: 2.5rem;
   height: 0.5rem;
   border-radius: 0.25rem 0 0 0.25rem;
   background: #f5efdf;
@@ -858,8 +874,8 @@ template {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 7.75rem;
-  height: 7.8125rem;
+  width: 6.25rem;
+  height: 6.25rem;
   border-radius: 1.25rem;
 }
 
@@ -870,10 +886,10 @@ template {
 .sex::after {
   position: absolute;
   content: '';
-  bottom: 0.4375rem;
-  right: 0.5rem;
-  width: 1.9375rem;
-  height: 1.9375rem;
+  bottom: 0.3125rem;
+  right: 0.375rem;
+  width: 1.625rem;
+  height: 1.625rem;
   border-radius: 50%;
   background-color: #eef5fb;
 }
@@ -885,27 +901,32 @@ template {
 
 .sex--active::after {
   position: absolute;
-  content: '';
-  bottom: 0.4375rem;
-  right: 0.5rem;
-  width: 1.9375rem;
-  height: 1.9375rem;
+  content: "";
+  bottom: 0.3125rem;
+  right: 0.375rem;
+  width: 1.625rem;
+  height: 1.625rem;
   border-radius: 50%;
   background: linear-gradient(90deg, #f4b841 0%, #f8c63f 100%);
   box-shadow: 0 0 0.3125rem 0 rgba(0, 0, 0, 0.2);
 }
 
+.quiz-slide-icons {
+  width: 87%;
+  margin: auto;
+}
+
 .quiz-slide-icon {
-  width: 3.625rem;
-  height: 4.6875rem;
+  width: 2.6875rem;
+  height: 3.75rem;
 }
 
 .check-icon {
   position: absolute;
-  bottom: 1rem;
-  right: 0.9375rem;
-  width: 0.9375rem;
-  height: 0.6875rem;
+  bottom: 0.875rem;
+  right: 0.8125rem;
+  width: 0.6875rem;
+  height: 0.4375rem;
   z-index: 200;
   fill: #cdd5de;
 }
@@ -917,7 +938,7 @@ template {
 .quiz-slide-titles {
   display: flex;
   justify-content: space-between;
-  padding: 0 1.75rem;
+  padding: 0 2.3125rem;
   margin-top: 1rem;
 }
 
@@ -925,8 +946,8 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1rem;
-  line-height: 1.625rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   color: #cacaca;
 }
 
@@ -937,27 +958,27 @@ template {
 .quiz-arrows {
   display: flex;
   justify-content: space-between;
-  width: 17.125rem;
+  width: 15.625rem;
   margin-top: 0.625rem;
 }
 
 .arrow__left {
   position: relative;
-  width: 2.8125rem;
-  height: 2.8125rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
   border-radius: 50%;
   background-color: #8c9ead;
 }
 
 .arrow__right {
   position: relative;
-  padding: 0.625rem 3.125rem 0.625rem 1.5rem;
+  padding: 0.5rem 2.5rem 0.5rem 1.25rem;
   text-align: center;
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1rem;
-  line-height: 1.625rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   color: #3f3113;
   border-radius: 1.4375rem;
   background: linear-gradient(90deg, #ecb845 0%, #f6c552 100%);
@@ -965,20 +986,20 @@ template {
 
 .arrow-icon-right {
   position: absolute;
-  top: 50%;
+  top: 52%;
   right: 1.5rem;
   transform: translateY(-50%);
-  width: 0.5rem;
-  height: 0.875rem;
+  width: 0.375rem;
+  height: 0.75rem;
 }
 
 .arrow-icon-left {
   position: absolute;
   top: 50%;
-  right: calc(50% + 8px);
+  right: calc(50% + 7px);
   transform: translate(calc(50% + 5px), -50%);
-  width: 0.6875rem;
-  height: 1.125rem;
+  width: 0.5rem;
+  height: 0.9375rem;
 }
 
 /* Second slide */
@@ -1000,8 +1021,8 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1rem;
-  line-height: 1.625rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   color: #3a4148;
 }
 
@@ -1028,8 +1049,8 @@ template {
   z-index: 200;
   top: 0.5rem;
   left: -0.6875rem;
-  width: 0.6875rem;
-  height: 0.6875rem;
+  width: 0.4375rem;
+  height: 0.4375rem;
 }
 
 .quiz-slide-checkbox input + label::before {
@@ -1040,8 +1061,8 @@ template {
 .quiz-slide-checkbox input:checked + label::after {
   top: -0.125rem;
   left: -1.3125rem;
-  width: 1.9375rem;
-  height: 1.9375rem;
+  width: 1.6875rem;
+  height: 1.6875rem;
 }
 
 .quiz-slide-checkbox input + label::after {
@@ -1059,7 +1080,7 @@ template {
 .checkbox-block {
   display: flex;
   align-items: center;
-  padding: 0.75rem 1rem 0.75rem 0.625rem;
+  padding: 0.625rem 0.875rem 0.625rem 0.5rem;
   border: 0.0625rem solid #9faab4;
   border-radius: 1.625rem;
 }
@@ -1070,33 +1091,62 @@ template {
 
 /* BG Slides */
 
-.quiz-slide-first {
-  background-repeat: no-repeat !important;
-  background-position: 100% 100% !important;
-  background-size: cover !important;
-  background: url(../img/first-slide-bg-mobile@2x.jpg);
-}
-
-.quiz-slide-second {
+.webp .quiz-slide-first {
+  padding-bottom: 1.5625rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  background: url(../img/second-slide-bg-mobile@1x.jpg);
+  background-color: #cbdcea;
+  background: url(../img/first-slide-bg-320@1x.webp);
 }
 
-.quiz-slide-third {
+.no-webp .quiz-slide-first {
+  padding-bottom: 1.5625rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  background: url(../img/third-slide-bg-mobile@1x.jpg);
+  background-color: #cbdcea;
+  background: url(../img/first-slide-bg-320@1x.jpg);
+}
+
+.webp .quiz-slide-second {
+  padding-bottom: 1.5625rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/second-slide-bg-320@1x.webp);
+}
+
+.no-webp .quiz-slide-second {
+  padding-bottom: 1.5625rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/second-slide-bg-320@1x.jpg);
+}
+
+.webp .quiz-slide-third {
+  padding-bottom: 1.5625rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/third-slide-bg-320@1x.webp);
+}
+
+.no-webp .quiz-slide-third {
+  padding-bottom: 1.5625rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/third-slide-bg-320@1x.jpg);
 }
 
 .question-mark {
   position: absolute;
-  top: 1rem;
-  right: 1.0625rem;
-  width: 1.875rem;
-  height: 1.875rem;
+  top: 1.125rem;
+  right: 1.1875rem;
+  width: 1.6875rem;
+  height: 1.6875rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1116,8 +1166,8 @@ template {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 6.25rem;
-  min-height: 4.375rem;
+  width: 5rem;
+  min-height: 3.75rem;
   margin-bottom: 0.1875rem;
   background: #dbe2ea;
   border-radius: 1.25rem;
@@ -1144,8 +1194,8 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 2.125rem;
-  line-height: 1.25rem;
+  font-size: 1.625rem;
+  line-height: 0.875rem;
   color: #a2adb7;
 }
 
@@ -1157,8 +1207,8 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1.125rem;
-  line-height: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.125rem;
   color: #a2adb7;
 }
 
@@ -1170,8 +1220,8 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1rem;
-  line-height: 1.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   color: #a2adb7;
 }
 
@@ -1268,11 +1318,20 @@ template {
   background: #f8fefe;
 }
 
-.quiz-slide-fourth {
+.webp .quiz-slide-fourth {
+  padding-bottom: 1.5625rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  background: url(../img/fourth-slide-bg-mobile.jpg);
+  background: url(../img/fourth-slide-bg-320@1x.webp);
+}
+
+.no-webp .quiz-slide-fourth {
+  padding-bottom: 1.5625rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/fourth-slide-bg-320@1x.jpg);
 }
 
 .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(1) .check-yellow,
@@ -1288,40 +1347,40 @@ template {
   position: absolute;
   z-index: 500;
   content: '';
-  width: 1.9375rem;
-  height: 1.9375rem;
+  width: 1.6875rem;
+  height: 1.6875rem;
   border-radius: 50%;
   background: #dbe2ea;
 }
 
 .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(1) .check-yellow {
-  top: 6.75rem;
-  left: 3.5rem;
+  top: 5.4375rem;
+  left: 2.8125rem;
 }
 
 .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(1)::after {
-  top: 6.125rem;
-  left: 3rem;
+  top: 4.9375rem;
+  left: 2.375rem;
 }
 
 .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(2) .check-yellow {
-  top: 11.125rem;
-  left: 3.5rem;
+  top: 9rem;
+  left: 2.8125rem;
 }
 
 .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(2)::after {
-  top: 10.5rem;
-  left: 3rem;
+  top: 8.5rem;
+  left: 2.375rem;
 }
 
 .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(3) .check-yellow {
-  top: 15.4375rem;
-  left: 3.5rem;
+  top: 12.5625rem;
+  left: 2.8125rem;
 }
 
 .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(3)::after {
-  top: 14.8125rem;
-  left: 3rem;
+  top: 12.0625rem;
+  left: 2.375rem;
 }
 
 .quiz-slide-fourth .quiz-slide-measure .input-wrap--active .check-yellow {
@@ -1347,11 +1406,11 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.3;
   color: #3a4148;
   outline: none;
-  padding: 0.8125rem 0.625rem 0.8125rem 3.4375rem;
+  padding: 0.625rem 0.625rem 0.625rem 3.4375rem;
   border: 0.0625rem solid #9faab4;
   border-radius: 1.625rem;
 }
@@ -1383,7 +1442,7 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.444;
   color: #cacaca;
   cursor: text;
@@ -1396,7 +1455,7 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.444;
   color: #cacaca;
   cursor: text;
@@ -1409,55 +1468,55 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.444;
   color: #cacaca;
   cursor: text;
 }
 
 .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-first {
-  top: 6.375rem;
-  left: 5.625rem;
+  top: 5rem;
+  left: 5rem;
 }
 
 .form__group.field .form__field:-ms-input-placeholder ~ .form__label-first {
-  top: 6.375rem;
-  left: 5.625rem;
+  top: 5rem;
+  left: 5rem;
 }
 
 .form__group.field .form__field:placeholder-shown ~ .form__label-first {
-  top: 6.375rem;
-  left: 5.625rem;
+  top: 5rem;
+  left: 5rem;
 }
 
 .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-second {
-  top: 10.625rem;
-  left: 5.625rem;
+  top: 8.5625rem;
+  left: 5rem;
 }
 
 .form__group.field .form__field:-ms-input-placeholder ~ .form__label-second {
-  top: 10.625rem;
-  left: 5.625rem;
+  top: 8.5625rem;
+  left: 5rem;
 }
 
 .form__group.field .form__field:placeholder-shown ~ .form__label-second {
-  top: 10.625rem;
-  left: 5.625rem;
+  top: 8.5625rem;
+  left: 5rem;
 }
 
 .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-third {
-  top: 14.875rem;
-  left: 5.625rem;
+  top: 12.0625rem;
+  left: 5rem;
 }
 
 .form__group.field .form__field:-ms-input-placeholder ~ .form__label-third {
-  top: 14.875rem;
-  left: 5.625rem;
+  top: 12.0625rem;
+  left: 5rem;
 }
 
 .form__group.field .form__field:placeholder-shown ~ .form__label-third {
-  top: 14.875rem;
-  left: 5.625rem;
+  top: 12.0625rem;
+  left: 5rem;
 }
 
 .form__group.field .form__label {
@@ -1467,24 +1526,24 @@ template {
   font-weight: 700;
   font-style: normal;
   color: #3a4148;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 1.444;
   transition: 0.2s;
 }
 
 .form__group.field .form__label-first {
-  top: 5.8125rem;
-  left: 12.5rem;
+  top: 4.5625rem;
+  left: 11.875rem;
 }
 
 .form__group.field .form__label-second {
-  top: 10rem;
-  left: 14.375rem;
+  top: 8.125rem;
+  left: 13.3125rem;
 }
 
 .form__group.field .form__label-third {
-  top: 14.375rem;
-  left: 14.0625rem;
+  top: 11.6875rem;
+  left: 12.9375rem;
 }
 
 .form__group.field .form__field:focus ~ .form__label-first,
@@ -1495,66 +1554,136 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 0.875rem;
+  font-size: 0.75rem !important;
   line-height: 1.444;
   color: #3a4148;
   transition: 0.2s;
 }
 
 .form__group.field .form__field:focus ~ .form__label-first {
-  top: 5.8125rem;
-  left: 12.5rem;
+  top: 4.5625rem;
+  left: 11.875rem;
 }
 
 .form__group.field .form__field:focus ~ .form__label-second {
-  top: 10rem;
-  left: 14.375rem;
+  top: 8.125rem;
+  left: 13.3125rem;
 }
 
 .form__group.field .form__field:focus ~ .form__label-third {
-  top: 14.375rem;
-  left: 14.0625rem;
+  top: 11.6875rem;
+  left: 12.9375rem;
 }
 
-.quiz-slide.quiz-slide-fifth {
+.webp .quiz-slide-fifth {
+  padding-bottom: 1.5625rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  background: url(../img/fifth-slide-bg-mobile@1x.jpg);
+  background: url(../img/fifth-slide-bg-320@1x.webp);
+}
+
+.no-webp .quiz-slide-fifth {
+  padding-bottom: 1.5625rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/fifth-slide-bg-320@1x.jpg);
 }
 
 .quiz-slide__dieta-type {
-  width: 8.25rem;
-  height: 8.25rem;
+  width: 6.25rem;
+  height: 6.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto 0.9375rem auto;
   border: 0.125rem solid #f4b841;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background-color: #f8fafb;
 }
 
-.dieta-type {
-  width: 7.25rem;
-  height: 7.25rem;
+.webp .dieta-type {
+  width: 5.25rem;
+  height: 5.25rem;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  background: url(../img/dieta-type@1x.png);
+  background: url(../img/dieta-type-320@1x.webp);
+}
+
+.no-webp .dieta-type {
+  width: 5.25rem;
+  height: 5.25rem;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background: url(../img/dieta-type-320@1x.png);
 }
 
 .dieta-type__text {
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: #3a4148;
   text-align: center;
 }
 
 .program-calc {
+  position: relative;
   width: 100%;
   min-height: 38.0625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  background: url(../img/program-calc-bg-mobile@1x.jpg);
+  background: url(../img/program-calc-bg-mobile-1@1x.jpg);
+}
+
+.program-calc-content {
+  position: absolute;
+  bottom: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress {
+  position: absolute;
+  top: -8.5rem;
+  left: 6.6875rem;
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 0.715;
+  color: #140d23;
+}
+
+.dieta-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 0.9375rem;
+}
+
+.program-calc__text {
+  font-family: "UniNeueRegular";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 1.333;
+  color: #3f3113;
+  text-align: center;
+}
+
+.program-calc__text--bold {
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* BLOCKS */
@@ -1564,8 +1693,7 @@ template {
   z-index: 100;
   left: 50%;
   transform: translateX(-50%);
-  width: 12.125rem;
-  padding: 0.9375rem 1.5625rem;
+  padding: 0.625rem 1.25rem;
   margin: 1.5625rem 0 7.5rem 0;
   text-align: center;
   border-radius: 3.125rem;
@@ -1576,7 +1704,7 @@ template {
   font-family: "Satisfy-Regular";
   font-weight: 400;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   line-height: 1.083;
 }
 
@@ -1592,7 +1720,7 @@ template {
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 1.857;
   color: #fefefe;
 }
@@ -1609,6 +1737,12 @@ template {
   }
 }
 
+@media screen and (min-width: 425px) {
+  .footer {
+    margin-top: -4rem;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .container-fluid {
     padding-left: 10px;
@@ -1620,8 +1754,490 @@ template {
     padding-right: 10px;
   }
 
-  .container {
-    width: 30rem;
+  .footer {
+    margin-top: -2.1875rem;
+    padding: 5.625rem 0.625rem 2.5rem 0.625rem;
+    background: url(../img/footer-bg-480@1x.png);
+  }
+
+  .nav__link {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .footer-logo {
+    font-size: 2.375rem;
+    line-height: 1.625rem;
+  }
+
+  .site-link {
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+
+  .copyright {
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+
+  .quiz-slide__content-first {
+    margin: 13.8125rem 0 0.5rem 0;
+  }
+
+  .quiz-slide__content-second {
+    margin: 9.625rem 0 0.5rem 0;
+  }
+
+  .quiz-slide__content-third {
+    margin: 7.25rem 0 0.5rem 0;
+  }
+
+  .quiz-slide__content-fourth {
+    margin: 10.8125rem 0 0.5rem 0;
+  }
+
+  .quiz-slide__content-fifth {
+    margin: 11.5625rem 0 0.5rem 0;
+  }
+
+  .quiz-slide__content-title {
+    font-size: 1.625rem;
+    line-height: 1.625rem;
+  }
+
+  .quiz-slide__choice {
+    width: 21.25rem;
+    min-height: 18.9375rem;
+    padding: 0.875rem 2.1875rem 1.25rem 2.1875rem;
+  }
+
+  .quiz-slide__choice-third {
+    padding: 2.5rem 2.1875rem 1.25rem 2.1875rem;
+  }
+
+  .quiz-slide__percent {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  .quiz-slide__percent--first {
+    transform: translateX(0.8125rem);
+  }
+
+  .quiz-slide__percent--second {
+    transform: translateX(4.0625rem);
+  }
+
+  .quiz-slide__percent--third {
+    transform: translateX(7.375rem);
+  }
+
+  .quiz-slide__percent--fourth {
+    transform: translateX(10.8125rem);
+  }
+
+  .quiz-slide__percent--fifth {
+    transform: translateX(13.9375rem);
+  }
+
+  .quiz-slide__range {
+    margin-bottom: 1.8125rem;
+  }
+
+  .range-line {
+    width: 3.375rem;
+    height: 0.5rem;
+  }
+
+  .female,
+  .male {
+    width: 7.75rem;
+    height: 7.75rem;
+  }
+
+  .sex::after {
+    bottom: 0.4375rem;
+    right: 0.5rem;
+    width: 1.9375rem;
+    height: 1.9375rem;
+  }
+
+  .sex--active::after {
+    bottom: 0.4375rem;
+    right: 0.5rem;
+    width: 1.9375rem;
+    height: 1.9375rem;
+  }
+
+  .quiz-slide-icons {
+    width: 100%;
+  }
+
+  .quiz-slide-icon {
+    width: 3.625rem;
+    height: 4.6875rem;
+  }
+
+  .check-icon {
+    bottom: 1rem;
+    right: 0.9375rem;
+    width: 0.9375rem;
+    height: 0.6875rem;
+  }
+
+  .quiz-slide-titles {
+    padding: 0 1.75rem;
+  }
+
+  .quiz-slide__title {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  .quiz-arrows {
+    width: 17.125rem;
+  }
+
+  .arrow__left {
+    width: 2.8125rem;
+    height: 2.8125rem;
+  }
+
+  .arrow__right {
+    padding: 0.625rem 3.125rem 0.625rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  .arrow-icon-right {
+    width: 0.5rem;
+    height: 0.875rem;
+  }
+
+  .arrow-icon-left {
+    right: calc(50% + 8px);
+    width: 0.6875rem;
+    height: 1.125rem;
+  }
+
+  .quiz-slide-checkbox label {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  .quiz-slide-checkbox input + label::before,
+  .quiz-slide-checkbox input:checked + label::before {
+    left: -0.9375rem;
+    width: 0.6875rem;
+    height: 0.6875rem;
+  }
+
+  .quiz-slide-checkbox input + label::after,
+  .quiz-slide-checkbox input:checked + label::after {
+    left: -1.5625rem;
+    width: 1.9375rem;
+    height: 1.9375rem;
+  }
+
+  .checkbox-block {
+    padding: 0.75rem 1rem 0.75rem 0.625rem;
+  }
+
+  .webp .quiz-slide-first {
+    background: url(../img/first-slide-bg-480@1x.webp);
+  }
+
+  .no-webp .quiz-slide-first {
+    background: url(../img/first-slide-bg-480@1x.jpg);
+  }
+
+  .webp .quiz-slide-second {
+    background: url(../img/second-slide-bg-480@1x.webp);
+  }
+
+  .no-webp .quiz-slide-second {
+    background: url(../img/second-slide-bg-480@1x.jpg);
+  }
+
+  .webp .quiz-slide-third {
+    background: url(../img/third-slide-bg-480@1x.webp);
+  }
+
+  .no-webp .quiz-slide-third {
+    background: url(../img/third-slide-bg-480@1x.jpg);
+  }
+
+  .question-mark {
+    top: 1rem;
+    right: 1.0625rem;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .quantaty {
+    width: 6.25rem;
+    min-height: 4.375rem;
+  }
+
+  .exercice-num {
+    font-size: 2.125rem;
+    line-height: 1.25rem;
+  }
+
+  .exercice-text {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+  }
+
+  .intensity {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+
+  .webp .quiz-slide-fourth {
+    background: url(../img/fourth-slide-bg-480@1x.webp);
+  }
+
+  .no-webp .quiz-slide-fourth {
+    background: url(../img/fourth-slide-bg-480@1x.jpg);
+  }
+
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(1)::after,
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(2)::after,
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(3)::after {
+    width: 1.9375rem;
+    height: 1.9375rem;
+  }
+
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(1) .check-yellow {
+    top: 6rem;
+    left: 3.5rem;
+  }
+
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(1)::after {
+    top: 5.375rem;
+    left: 3rem;
+  }
+
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(2) .check-yellow {
+    top: 9.9375rem;
+    left: 3.5rem;
+  }
+
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(2)::after {
+    top: 9.3125rem;
+    left: 3rem;
+  }
+
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(3) .check-yellow {
+    top: 13.875rem;
+    left: 3.5rem;
+  }
+
+  .quiz-slide-fourth .quiz-slide-measure .input-wrap:nth-child(3)::after {
+    top: 13.25rem;
+    left: 3rem;
+  }
+
+  .form__group.field .form__field {
+    padding: 0.8125rem 0.625rem 0.8125rem 3.4375rem;
+  }
+
+  .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-first,
+  .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-second,
+  .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-third {
+    font-size: 1.125rem;
+    line-height: 1.444;
+  }
+
+  .form__group.field .form__field:-ms-input-placeholder ~ .form__label-first,
+  .form__group.field .form__field:-ms-input-placeholder ~ .form__label-second,
+  .form__group.field .form__field:-ms-input-placeholder ~ .form__label-third {
+    font-size: 1.125rem;
+    line-height: 1.444;
+  }
+
+  .form__group.field .form__field:placeholder-shown ~ .form__label-first,
+  .form__group.field .form__field:placeholder-shown ~ .form__label-second,
+  .form__group.field .form__field:placeholder-shown ~ .form__label-third {
+    font-size: 1.125rem;
+    line-height: 1.444;
+  }
+
+  .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-first {
+    top: 5.5rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__field:-ms-input-placeholder ~ .form__label-first {
+    top: 5.5rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__field:placeholder-shown ~ .form__label-first {
+    top: 5.5rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-second {
+    top: 9.375rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__field:-ms-input-placeholder ~ .form__label-second {
+    top: 9.375rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__field:placeholder-shown ~ .form__label-second {
+    top: 9.375rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__field:-moz-placeholder-shown ~ .form__label-third {
+    top: 13.3125rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__field:-ms-input-placeholder ~ .form__label-third {
+    top: 13.3125rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__field:placeholder-shown ~ .form__label-third {
+    top: 13.3125rem;
+    left: 5.625rem;
+  }
+
+  .form__group.field .form__label {
+    font-size: 0.875rem;
+  }
+
+  .form__group.field .form__label-first {
+    top: 5rem;
+    left: 12.9375rem;
+  }
+
+  .form__group.field .form__label-second {
+    top: 8.875rem;
+    left: 14.625rem;
+  }
+
+  .form__group.field .form__label-third {
+    top: 12.8125rem;
+    left: 14.0625rem;
+  }
+
+  .form__group.field .form__field:focus ~ .form__label-first,
+  .form__group.field .form__field:focus ~ .form__label-second,
+  .form__group.field .form__field:focus ~ .form__label-third {
+    font-size: 0.875rem !important;
+  }
+
+  .form__group.field .form__field:focus ~ .form__label-first {
+    top: 5rem;
+    left: 12.9375rem;
+  }
+
+  .form__group.field .form__field:focus ~ .form__label-second {
+    top: 8.875rem;
+    left: 14.625rem;
+  }
+
+  .form__group.field .form__field:focus ~ .form__label-third {
+    top: 12.8125rem;
+    left: 14.0625rem;
+  }
+
+  .webp .quiz-slide-fifth {
+    background: url(../img/fifth-slide-bg-480@1x.webp);
+  }
+
+  .no-webp .quiz-slide-fifth {
+    background: url(../img/fifth-slide-bg-480@1x.jpg);
+  }
+
+  .quiz-slide__dieta-type {
+    width: 8.25rem;
+    height: 8.25rem;
+  }
+
+  .webp .dieta-type {
+    width: 7.25rem;
+    height: 7.25rem;
+    background: url(../img/dieta-type-480@1x.webp);
+  }
+
+  .no-webp .dieta-type {
+    width: 7.25rem;
+    height: 7.25rem;
+    background: url(../img/dieta-type-480@1x.png);
+  }
+
+  .dieta-type__text {
+    font-size: 1rem;
+  }
+
+  .logo {
+    padding: 0.9375rem 1.5625rem;
+  }
+
+  .logo__title {
+    font-size: 1.5rem;
+  }
+
+  .logo__text {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (-webkit-min-device-pixel-ratio: 1.2), screen and (min-width: 480px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 480px) and (min-resolution: 192dpi) {
+  .webp .quiz-slide-first {
+    background: url(../img/first-slide-bg-480@2x.webp);
+  }
+
+  .no-webp .quiz-slide-first {
+    background: url(../img/first-slide-bg-480@2x.jpg);
+  }
+
+  .webp .quiz-slide-second {
+    background: url(../img/second-slide-bg-480@2x.webp);
+  }
+
+  .no-webp .quiz-slide-second {
+    background: url(../img/second-slide-bg-480@2x.jpg);
+  }
+
+  .webp .quiz-slide-third {
+    background: url(../img/third-slide-bg-480@2x.webp);
+  }
+
+  .no-webp .quiz-slide-third {
+    background: url(../img/third-slide-bg-480@2x.jpg);
+  }
+
+  .webp .quiz-slide-fourth {
+    background: url(../img/fourth-slide-bg-480@2x.webp);
+  }
+
+  .no-webp .quiz-slide-fourth {
+    background: url(../img/fourth-slide-bg-480@2x.jpg);
+  }
+
+  .webp .quiz-slide-fifth {
+    background: url(../img/fifth-slide-bg-480@2x.webp);
+  }
+
+  .no-webp .quiz-slide-fifth {
+    background: url(../img/fifth-slide-bg-480@2x.jpg);
+  }
+
+  .webp .dieta-type {
+    background: url(../img/dieta-type-480@2x.webp);
+  }
+
+  .no-webp .dieta-type {
+    background: url(../img/dieta-type-480@2x.png);
   }
 }
 
@@ -1646,5 +2262,55 @@ template {
   .container {
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .webp .quiz-slide-first {
+    background: url(../img/first-slide-bg-320@2x.webp);
+  }
+
+  .no-webp .quiz-slide-first {
+    background: url(../img/first-slide-bg-320@2x.jpg);
+  }
+
+  .webp .quiz-slide-second {
+    background: url(../img/second-slide-bg-320@2x.webp);
+  }
+
+  .no-webp .quiz-slide-second {
+    background: url(../img/second-slide-bg-320@2x.jpg);
+  }
+
+  .webp .quiz-slide-third {
+    background: url(../img/third-slide-bg-320@2x.webp);
+  }
+
+  .no-webp .quiz-slide-third {
+    background: url(../img/third-slide-bg-320@2x.jpg);
+  }
+
+  .webp .quiz-slide-fourth {
+    background: url(../img/fourth-slide-bg-320@2x.webp);
+  }
+
+  .no-webp .quiz-slide-fourth {
+    background: url(../img/fourth-slide-bg-320@2x.jpg);
+  }
+
+  .webp .quiz-slide-fifth {
+    background: url(../img/fifth-slide-bg-320@2x.webp);
+  }
+
+  .no-webp .quiz-slide-fifth {
+    background: url(../img/fifth-slide-bg-320@2x.jpg);
+  }
+
+  .webp .dieta-type {
+    background: url(../img/dieta-type-320@2x.webp);
+  }
+
+  .no-webp .dieta-type {
+    background: url(../img/dieta-type-320@2x.png);
   }
 }
