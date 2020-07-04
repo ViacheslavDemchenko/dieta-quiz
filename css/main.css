@@ -730,7 +730,7 @@ template {
 .content {
   position: relative;
   width: 100%;
-  background-color: #cbdcea;
+  background: linear-gradient(60deg, #563e90 0%, #7c64b5 100%);
 }
 
 .quiz {
@@ -744,6 +744,7 @@ template {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(60deg, #563e90 0%, #7c64b5 100%);
 }
 
 .quiz-slide__content {
@@ -753,7 +754,7 @@ template {
   padding: 0.625rem 0.9375rem;
   border: 0.125rem solid #fefefe;
   border-radius: 1.25rem 2rem;
-  background: linear-gradient(90deg, #573f91 0%, #7a62b3 100%);
+  background: linear-gradient(60deg, #563e90 0%, #7c64b5 100%);
 }
 
 .quiz-slide__content-first {
