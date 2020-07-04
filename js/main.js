@@ -154,7 +154,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 $(document).ready(function () {
   $('.owl-carousel').owlCarousel({
-    items: 1
+    items: 1,
+    autoHeight: true
   });
 });
 "use strict";
