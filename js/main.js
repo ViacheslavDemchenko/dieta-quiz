@@ -155,7 +155,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 $(document).ready(function () {
   $('.owl-carousel').owlCarousel({
     items: 1,
-    autoHeight: true
+    autoHeight: true,
+    touchDrag: false,
+    mouseDrag: false,
+    pullDrag: false,
+    nav: true,
+    navText: ['<span class="arrow__left"></span>', '<span class="arrow__right">Далее</span>']
   });
 });
 "use strict";
