@@ -152,11 +152,177 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }(window, document);
 "use strict";
 
+;
+
+(function () {
+  function webpSupportCheck() {
+    var webp = true;
+    Modernizr.on('webp', function (result) {
+      if (result) {
+        webp = true;
+      } else {
+        webp = false;
+      }
+    });
+    return webp;
+  }
+
+  if ($('.program-calc').length) {
+    var bgImageChange = function bgImageChange() {
+      var screenWidth = window.screen.width;
+
+      if (webpSupportCheck() && screenWidth == 320 && window.devicePixelRatio == 1) {
+        console.log('WEBP');
+        console.log('320');
+        console.log('window.devicePixelRatio 1');
+        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-320-1@1x.webp')";
+        src = './img/program-calc-bg-mobile-320-';
+        imgType = '@1x.webp';
+      }
+
+      if (webpSupportCheck() && screenWidth == 320 && window.devicePixelRatio > 1) {
+        console.log('WEBP');
+        console.log('320');
+        console.log('window.devicePixelRatio > 1');
+        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-320-1@2x.webp')";
+        src = './img/program-calc-bg-mobile-320-';
+        imgType = '@2x.webp';
+      }
+
+      if (webpSupportCheck() && screenWidth >= 375 && screenWidth < 560 && window.devicePixelRatio == 1) {
+        console.log('WEBP');
+        console.log('480');
+        console.log('window.devicePixelRatio 1');
+        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-480-1@1x.webp')";
+        src = './img/program-calc-bg-mobile-480-';
+        imgType = '@1x.webp';
+      }
+
+      if (webpSupportCheck() && screenWidth >= 375 && screenWidth < 560 && window.devicePixelRatio > 1) {
+        console.log('WEBP');
+        console.log('480');
+        console.log('window.devicePixelRatio > 1');
+        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-480-1@2x.webp')";
+        src = './img/program-calc-bg-mobile-480-';
+        imgType = '@2x.webp';
+      }
+
+      if (!webpSupportCheck() && screenWidth == 320 && window.devicePixelRatio == 1) {
+        console.log('jpg');
+        console.log('320');
+        console.log('window.devicePixelRatio 1');
+        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-320-1@1x.jpg')";
+        src = './img/program-calc-bg-mobile-320-';
+        imgType = '@1x.jpg';
+      }
+
+      if (!webpSupportCheck() && screenWidth == 320 && window.devicePixelRatio > 1) {
+        console.log('jpg');
+        console.log('320');
+        console.log('window.devicePixelRatio > 1');
+        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-320-1@2x.jpg')";
+        src = './img/program-calc-bg-mobile-320-';
+        imgType = '@2x.jpg';
+      }
+
+      if (!webpSupportCheck() && screenWidth >= 375 && screenWidth < 560 && window.devicePixelRatio == 1) {
+        console.log('jpg');
+        console.log('480');
+        console.log('window.devicePixelRatio 1');
+        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-480-1@1x.jpg')";
+        src = './img/program-calc-bg-mobile-480-';
+        imgType = '@1x.jpg';
+      }
+
+      if (!webpSupportCheck() && screenWidth >= 375 && screenWidth < 560 && window.devicePixelRatio > 1) {
+        console.log('jpg');
+        console.log('480');
+        console.log('window.devicePixelRatio > 1');
+        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-480-1@2x.jpg')";
+        src = './img/program-calc-bg-mobile-480-';
+        imgType = '@2x.jpg';
+      }
+    };
+
+    var bgImgChange = function bgImgChange() {
+      var i = 1;
+      timer = setInterval(function () {
+        if (i >= 3) {
+          i = 0;
+        }
+
+        console.log("url(".concat(src).concat(i + 1).concat(imgType));
+        bgImage.style.backgroundImage = "url(".concat(src).concat(i + 1).concat(imgType);
+        i++;
+      }, 3000);
+    };
+
+    var bgImage = document.querySelector('.program-calc');
+    var src;
+    var imgType;
+    var timer;
+    bgImageChange();
+    bgImgChange();
+
+    if ($('.progress').length) {
+      var percentage = document.querySelector('.progress');
+      $('.progress').animate({
+        num: 100 - 0
+      }, {
+        duration: 20000,
+        step: function step(num) {
+          this.innerHTML = (num + 0).toFixed(0) + '%';
+
+          if (this.innerHTML == '100%') {
+            clearInterval(timer);
+            window.location.href = 'personal-profile.html';
+          }
+        }
+      });
+    }
+  }
+})();
+"use strict";
+
 $(document).ready(function () {
-  $('.owl-carousel').owlCarousel({
-    items: 1,
-    autoWidth: true
-  });
+  var owl = $('.owl-carousel');
+
+  if (owl.length) {
+    owl.owlCarousel({
+      items: 1,
+      autoHeight: true,
+      // touchDrag: false,
+      // mouseDrag: false,
+      // pullDrag: false,
+      // nav: true,
+      // navText: ['<span class="arrow__left"></span>', '<span class="arrow__right">Далее</span>'],
+      onChange: function onChange(e) {
+        $('.counter').text('1 из ' + this.items().length);
+      }
+    });
+    $(".arrow__right").click(function () {
+      owl.trigger("next.owl.carousel");
+    });
+    $(".arrow__left").click(function () {
+      owl.trigger("prev.owl.carousel");
+    }); // let owl = $('.owl-carousel');
+
+    owl.on('changed.owl.carousel', function (e) {
+      if ($('.owl-next').length) {
+        var btnNext = document.querySelector('.owl-next');
+        console.log(btnNext);
+        $('.counter').text(++e.page.index + ' из ' + e.item.count);
+        console.log("".concat(+e.page.index, " \u0438\u0437 ").concat(e.item.count));
+
+        if (+e.page.index == e.item.count && +e.page.index != 0) {
+          console.log('end');
+          btnNext.classList.add('owl-next--last');
+        } else {
+          btnNext.classList.remove('owl-next--last');
+        }
+      }
+    });
+  }
 });
 "use strict";
 

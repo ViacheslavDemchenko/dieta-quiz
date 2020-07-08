@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./fonts/fonts.css">
-    <link rel="stylesheet" href="https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/assets/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.css">
+    <link rel="stylesheet" href="./css/owl.carousel.css">
     <link rel="icon" href="#!" type="image/x-icon">
     <link rel="shortcut icon" href="#!" type="image/x-icon">
     <link rel="apple-touch-icon" href="#!"><!--[if lte IE 10]>
@@ -25,7 +25,7 @@
         </div>
         <div class="quiz owl-carousel">
           <div class="quiz-slide quiz-slide-first quiz-slide__left-active">
-            <div class="quiz-slide__content">
+            <div class="quiz-slide__content quiz-slide__content-first">
               <div class="quiz-slide__content-title">Выберите пол</div>
             </div>
             <div class="quiz-slide__choice">
@@ -104,7 +104,9 @@
           </div>
           <div class="quiz-slide quiz-slide-third">
             <div class="quiz-slide__content quiz-slide__content-third">
-              <div class="quiz-slide__content-title">Физические нагрузки в неделю</div>
+              <div class="quiz-slide__content-title">Физические 
+                <p>нагрузки в неделю</p>
+              </div>
             </div>
             <div class="quiz-slide__choice quiz-slide__choice-third">
               <div class="question-mark">?</div>
@@ -115,6 +117,9 @@
                   <div class="quantaty quantaty--active">
                     <div class="exercice-num exercice-num--active">0</div>
                     <div class="exercice-text exercice-text--active">раз</div>
+                    <svg class="quantaty-check-icon" width="15" height="11">
+                      <use xlink:href="img/icons/sprite.svg#check"></use>
+                    </svg>
                   </div>
                   <div class="intensity intensity--active">Минимум</div>
                 </div>
@@ -122,6 +127,9 @@
                   <div class="quantaty">
                     <div class="exercice-num">1-3</div>
                     <div class="exercice-text">раза</div>
+                    <svg class="quantaty-check-icon" width="15" height="11">
+                      <use xlink:href="img/icons/sprite.svg#check"></use>
+                    </svg>
                   </div>
                   <div class="intensity">Небольшие</div>
                 </div>
@@ -129,6 +137,9 @@
                   <div class="quantaty">
                     <div class="exercice-num">3-5</div>
                     <div class="exercice-text">раз</div>
+                    <svg class="quantaty-check-icon" width="15" height="11">
+                      <use xlink:href="img/icons/sprite.svg#check"></use>
+                    </svg>
                   </div>
                   <div class="intensity">Средние</div>
                 </div>
@@ -136,6 +147,9 @@
                   <div class="quantaty">
                     <div class="exercice-num">5</div>
                     <div class="exercice-text">раз</div>
+                    <svg class="quantaty-check-icon" width="15" height="11">
+                      <use xlink:href="img/icons/sprite.svg#check"></use>
+                    </svg>
                   </div>
                   <div class="intensity">Интенсивные</div>
                 </div>
@@ -143,6 +157,9 @@
                   <div class="quantaty">
                     <div class="exercice-num">7</div>
                     <div class="exercice-text">раз</div>
+                    <svg class="quantaty-check-icon" width="15" height="11">
+                      <use xlink:href="img/icons/sprite.svg#check"></use>
+                    </svg>
                   </div>
                   <div class="intensity">Ежедневные</div>
                 </div>
@@ -150,6 +167,9 @@
                   <div class="quantaty">
                     <div class="exercice-num">7+</div>
                     <div class="exercice-text">раз</div>
+                    <svg class="quantaty-check-icon" width="15" height="11">
+                      <use xlink:href="img/icons/sprite.svg#check"></use>
+                    </svg>
                   </div>
                   <div class="intensity">Ежедневные интенсивные</div>
                 </div>
@@ -214,7 +234,7 @@
             </div>
           </div>
           <div class="quiz-slide quiz-slide-fourth">
-            <div class="quiz-slide__content quiz-slide__content-second">
+            <div class="quiz-slide__content quiz-slide__content-fourth">
               <div class="quiz-slide__content-title">Измерения</div>
             </div>
             <div class="quiz-slide__choice">
@@ -264,7 +284,7 @@
             </div>
           </div>
           <div class="quiz-slide quiz-slide-fifth">
-            <div class="quiz-slide__content quiz-slide__content-second">
+            <div class="quiz-slide__content quiz-slide__content-fifth">
               <div class="quiz-slide__content-title">Данные собраны</div>
             </div>
             <div class="quiz-slide__choice">
@@ -281,7 +301,7 @@
                   <use xlink:href="img/icons/sprite.svg#arrow-left"></use>
                 </svg>
               </div>
-              <div class="arrow__right">Далее
+              <div class="arrow__right arrow__right--last"><a href="program-calc.html">Составить</a>
                 <svg class="arrow-icon-right" width="8" height="14">
                   <use xlink:href="img/icons/sprite.svg#arrow-right"></use>
                 </svg>
@@ -313,8 +333,8 @@
         </footer>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
