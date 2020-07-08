@@ -996,6 +996,21 @@ template {
   background: linear-gradient(90deg, #ecb845 0%, #f6c552 100%);
 }
 
+.arrow__right--last {
+  position: absolute;
+  bottom: 1.75rem;
+  right: 6.25rem;
+}
+
+.arrow__right--last a {
+  font-family: "UniNeueBold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: #3f3113;
+}
+
 .arrow-icon-right {
   position: absolute;
   top: 52%;
@@ -1701,25 +1716,14 @@ template {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.webp .program-calc {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
-  background: url(../img/program-calc-bg-mobile-320-1@1x.webp);
-}
-
-.no-webp .program-calc {
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background: url(../img/program-calc-bg-mobile-320-1@1x.jpg);
 }
 
 .program-calc-content {
   position: absolute;
-  bottom: 4.5rem;
+  bottom: 3.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1727,8 +1731,9 @@ template {
 
 .progress {
   position: absolute;
-  top: -8.9375rem;
-  left: 6.0625rem;
+  top: -154%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: "UniNeueBold";
   font-weight: 700;
   font-style: normal;
@@ -3342,6 +3347,11 @@ template {
     line-height: 1.625rem;
   }
 
+  .arrow__right--last a {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
   .arrow-icon-right {
     width: 0.5rem;
     height: 0.875rem;
@@ -3633,23 +3643,14 @@ template {
     font-size: 1rem;
   }
 
-  .webp .program-calc {
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background: url(../img/program-calc-bg-mobile-480-1@1x.webp);
-  }
-
-  .no-webp .program-calc {
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background: url(../img/program-calc-bg-mobile-480-1@1x.jpg);
+  .program-calc-content {
+    bottom: 2.625rem;
   }
 
   .progress {
-    top: -8.5rem;
-    left: 6.6875rem;
+    top: -146%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 1.25rem;
   }
 
@@ -4354,14 +4355,6 @@ template {
     background: url(../img/dieta-type-480@2x.png);
   }
 
-  .webp .program-calc {
-    background: url(../img/program-calc-bg-mobile-480-1@2x.webp);
-  }
-
-  .no-webp .program-calc {
-    background: url(../img/program-calc-bg-mobile-480-1@2x.jpg);
-  }
-
   .webp .personal-profile {
     background: url(../img/personal-profile-bg-480@2x.webp);
   }
@@ -4514,13 +4507,5 @@ template {
 
   .no-webp .dieta-type {
     background: url(../img/dieta-type-320@2x.png);
-  }
-
-  .webp .program-calc {
-    background: url(../img/program-calc-bg-mobile-320-1@2x.webp);
-  }
-
-  .no-webp .program-calc {
-    background: url(../img/program-calc-bg-mobile-320-1@2x.jpg);
   }
 }
