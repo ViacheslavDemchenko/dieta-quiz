@@ -155,6 +155,151 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 ;
 
 (function () {
+  if ($('.about-list').length) {
+    var accordItems = document.querySelectorAll('.about-item__title'),
+        active = document.getElementsByClassName('about-item__title--active');
+    Array.from(accordItems).forEach(function (item) {
+      item.addEventListener('click', function () {
+        if (active.length > 0 && active[0] !== this) active[0].classList.remove('about-item__title--active');
+        this.classList.toggle('about-item__title--active');
+      });
+    });
+  }
+
+  if ($('.faq-list').length) {
+    var _accordItems = document.querySelectorAll('.faq-item__title'),
+        _active = document.getElementsByClassName('faq-item__title--active');
+
+    Array.from(_accordItems).forEach(function (item) {
+      item.addEventListener('click', function () {
+        if (_active.length > 0 && _active[0] !== this) _active[0].classList.remove('faq-item__title--active');
+        this.classList.toggle('faq-item__title--active');
+      });
+    });
+  }
+})();
+"use strict";
+
+$(document).ready(function () {
+  if ($('.quiz-slide-third').length) {
+    var openQuizSlideThirdModal = function openQuizSlideThirdModal() {
+      overlay.classList.add('overlay--active');
+      quizSlideThirdModal.classList.add('quiz-slide-third-modal--active');
+      body.classList.add('no-scroll');
+    };
+
+    var closeQuizSlideThirdModal = function closeQuizSlideThirdModal() {
+      overlay.classList.remove('overlay--active');
+      quizSlideThirdModal.classList.remove('quiz-slide-third-modal--active');
+      body.classList.remove('no-scroll');
+    };
+
+    var quizSlideThirdModal = document.querySelector('.quiz-slide-third-modal');
+    var overlay = document.querySelector('.overlay');
+    var body = document.getElementsByTagName('body')[0];
+    var quizSlideThirdModalOpen = document.querySelector('.question-mark');
+    var quizSlideThirdModalClose = document.querySelector('.third-slide-modal');
+    quizSlideThirdModalOpen.addEventListener('click', openQuizSlideThirdModal);
+    quizSlideThirdModalClose.addEventListener('click', closeQuizSlideThirdModal);
+  }
+
+  if ($('.personal-profile').length) {
+    var openResultBlockModalB_M_I = function openResultBlockModalB_M_I() {
+      _overlay.classList.add('overlay--active');
+
+      resultBlockModalBMI.classList.add('result-block-modal--bmi--active');
+
+      _body.classList.add('no-scroll');
+    };
+
+    var closeResultBlockModalB_M_I = function closeResultBlockModalB_M_I() {
+      _overlay.classList.remove('overlay--active');
+
+      resultBlockModalBMI.classList.remove('result-block-modal--bmi--active');
+
+      _body.classList.remove('no-scroll');
+    };
+
+    var openResultBlockModal_Energy = function openResultBlockModal_Energy() {
+      _overlay.classList.add('overlay--active');
+
+      resultBlockModalEnergy.classList.add('result-block-modal--energy--active');
+
+      _body.classList.add('no-scroll');
+    };
+
+    var closeResultBlockModal_Energy = function closeResultBlockModal_Energy() {
+      _overlay.classList.remove('overlay--active');
+
+      resultBlockModalEnergy.classList.remove('result-block-modal--energy--active');
+
+      _body.classList.remove('no-scroll');
+    };
+
+    var openResultBlockModal_Weight = function openResultBlockModal_Weight() {
+      _overlay.classList.add('overlay--active');
+
+      resultBlockModalWeight.classList.add('result-block-modal--loose-weight--active');
+
+      _body.classList.add('no-scroll');
+    };
+
+    var closeResultBlockModal_Weight = function closeResultBlockModal_Weight() {
+      _overlay.classList.remove('overlay--active');
+
+      resultBlockModalWeight.classList.remove('result-block-modal--loose-weight--active');
+
+      _body.classList.remove('no-scroll');
+    };
+
+    var openResultBlockModal_Result = function openResultBlockModal_Result() {
+      _overlay.classList.add('overlay--active');
+
+      resultBlockModalResult.classList.add('result-block-modal--result--active');
+
+      _body.classList.add('no-scroll');
+    };
+
+    var closeResultBlockModal_Result = function closeResultBlockModal_Result() {
+      _overlay.classList.remove('overlay--active');
+
+      resultBlockModalResult.classList.remove('result-block-modal--result--active');
+
+      _body.classList.remove('no-scroll');
+    };
+
+    var _body = document.getElementsByTagName('body')[0];
+
+    var _overlay = document.querySelector('.overlay');
+
+    var resultBlockModalBMI = document.querySelector('.result-block-modal--bmi');
+    var openResultBlockModalBMI = document.querySelector('.question-mark--bmi');
+    var closeResultBlockModalBMI = document.querySelector('.close-modal--bmi'); // console.log(overlay);
+
+    openResultBlockModalBMI.addEventListener('click', openResultBlockModalB_M_I);
+    closeResultBlockModalBMI.addEventListener('click', closeResultBlockModalB_M_I);
+    var resultBlockModalEnergy = document.querySelector('.result-block-modal--energy');
+    var openResultBlockModalEnergy = document.querySelector('.question-mark--energy');
+    var closeResultBlockModalEnergy = document.querySelector('.close-modal--energy');
+    openResultBlockModalEnergy.addEventListener('click', openResultBlockModal_Energy);
+    closeResultBlockModalEnergy.addEventListener('click', closeResultBlockModal_Energy);
+    var resultBlockModalWeight = document.querySelector('.result-block-modal--loose-weight');
+    var openResultBlockModalWeight = document.querySelector('.question-mark--weight');
+    var closeResultBlockModalWeight = document.querySelector('.close-modal--weight');
+    openResultBlockModalWeight.addEventListener('click', openResultBlockModal_Weight);
+    closeResultBlockModalWeight.addEventListener('click', closeResultBlockModal_Weight);
+    var resultBlockModalResult = document.querySelector('.result-block-modal--result');
+    var openResultBlockModalResult = document.querySelector('.question-mark--result');
+    var closeResultBlockModalResult = document.querySelector('.close-modal--result');
+    openResultBlockModalResult.addEventListener('click', openResultBlockModal_Result);
+    closeResultBlockModalResult.addEventListener('click', closeResultBlockModal_Result);
+  }
+});
+"use strict";
+
+;
+
+(function () {
   function webpSupportCheck() {
     var webp = true;
     Modernizr.on('webp', function (result) {
@@ -167,80 +312,40 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return webp;
   }
 
-  if ($('.program-calc').length) {
+  if ($('.program-calc__dish').length) {
     var bgImageChange = function bgImageChange() {
       var screenWidth = window.screen.width;
 
-      if (webpSupportCheck() && screenWidth == 320 && window.devicePixelRatio == 1) {
-        console.log('WEBP');
-        console.log('320');
-        console.log('window.devicePixelRatio 1');
-        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-320-1@1x.webp')";
-        src = './img/program-calc-bg-mobile-320-';
-        imgType = '@1x.webp';
+      if (webpSupportCheck() && screenWidth < 481 && window.devicePixelRatio == 1) {
+        // console.log('WEBP');
+        // console.log('< 481');
+        // console.log('window.devicePixelRatio 1');
+        // src = './img/dish-';
+        imgType = '-480@1x.webp';
       }
 
-      if (webpSupportCheck() && screenWidth == 320 && window.devicePixelRatio > 1) {
-        console.log('WEBP');
-        console.log('320');
-        console.log('window.devicePixelRatio > 1');
-        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-320-1@2x.webp')";
-        src = './img/program-calc-bg-mobile-320-';
-        imgType = '@2x.webp';
+      if (webpSupportCheck() && screenWidth < 481 && window.devicePixelRatio > 1) {
+        // console.log('WEBP');
+        // console.log('< 481');
+        // console.log('window.devicePixelRatio > 1');
+        // src = './img/dish-';
+        imgType = '-480@2x.webp';
       }
 
-      if (webpSupportCheck() && screenWidth >= 375 && screenWidth < 560 && window.devicePixelRatio == 1) {
-        console.log('WEBP');
-        console.log('480');
-        console.log('window.devicePixelRatio 1');
-        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-480-1@1x.webp')";
-        src = './img/program-calc-bg-mobile-480-';
-        imgType = '@1x.webp';
+      if (!webpSupportCheck() && screenWidth < 481 && window.devicePixelRatio == 1) {
+        // console.log('jpg');
+        // console.log('< 481');
+        // console.log('window.devicePixelRatio 1');
+        // src = './img/dish-';
+        imgType = '-480@1x.jpg';
       }
 
-      if (webpSupportCheck() && screenWidth >= 375 && screenWidth < 560 && window.devicePixelRatio > 1) {
-        console.log('WEBP');
-        console.log('480');
-        console.log('window.devicePixelRatio > 1');
-        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-480-1@2x.webp')";
-        src = './img/program-calc-bg-mobile-480-';
-        imgType = '@2x.webp';
-      }
-
-      if (!webpSupportCheck() && screenWidth == 320 && window.devicePixelRatio == 1) {
-        console.log('jpg');
-        console.log('320');
-        console.log('window.devicePixelRatio 1');
-        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-320-1@1x.jpg')";
-        src = './img/program-calc-bg-mobile-320-';
-        imgType = '@1x.jpg';
-      }
-
-      if (!webpSupportCheck() && screenWidth == 320 && window.devicePixelRatio > 1) {
-        console.log('jpg');
-        console.log('320');
-        console.log('window.devicePixelRatio > 1');
-        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-320-1@2x.jpg')";
-        src = './img/program-calc-bg-mobile-320-';
-        imgType = '@2x.jpg';
-      }
-
-      if (!webpSupportCheck() && screenWidth >= 375 && screenWidth < 560 && window.devicePixelRatio == 1) {
-        console.log('jpg');
-        console.log('480');
-        console.log('window.devicePixelRatio 1');
-        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-480-1@1x.jpg')";
-        src = './img/program-calc-bg-mobile-480-';
-        imgType = '@1x.jpg';
-      }
-
-      if (!webpSupportCheck() && screenWidth >= 375 && screenWidth < 560 && window.devicePixelRatio > 1) {
-        console.log('jpg');
-        console.log('480');
-        console.log('window.devicePixelRatio > 1');
-        bgImage.style.backgroundImage = "url('./img/program-calc-bg-mobile-480-1@2x.jpg')";
-        src = './img/program-calc-bg-mobile-480-';
-        imgType = '@2x.jpg';
+      if (!webpSupportCheck() && screenWidth < 481 && window.devicePixelRatio > 1) {
+        // console.log('jpg');
+        // console.log('< 481');
+        // console.log('window.devicePixelRatio > 1');
+        // src = './img/dish-';
+        imgType = '-480@2x.jpg';
       }
     };
 
@@ -249,16 +354,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       timer = setInterval(function () {
         if (i >= 3) {
           i = 0;
-        }
+        } // console.log(`url(${src}${i}${imgType})`);
 
-        console.log("url(".concat(src).concat(i + 1).concat(imgType));
-        bgImage.style.backgroundImage = "url(".concat(src).concat(i + 1).concat(imgType);
+
+        dish.style.backgroundImage = "url(".concat(src).concat(i + 1).concat(imgType);
         i++;
-      }, 3000);
+      }, 1500);
     };
 
-    var bgImage = document.querySelector('.program-calc');
-    var src;
+    var dish = document.querySelector('.program-calc__dish');
+    var src = './img/dish-';
     var imgType;
     var timer;
     bgImageChange();
@@ -269,7 +374,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       $('.progress').animate({
         num: 100 - 0
       }, {
-        duration: 20000,
+        duration: 5000,
         step: function step(num) {
           this.innerHTML = (num + 0).toFixed(0) + '%';
 
@@ -285,37 +390,43 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 "use strict";
 
 $(document).ready(function () {
+  var owl = $('.reviews-slider.owl-carousel');
+
+  if (owl.length) {
+    owl.owlCarousel({
+      items: 1,
+      autoWidth: true,
+      margin: 5,
+      nav: false,
+      center: true
+    });
+  }
+});
+"use strict";
+
+$(document).ready(function () {
   var owl = $('.owl-carousel');
 
   if (owl.length) {
     owl.owlCarousel({
       items: 1,
       autoHeight: true,
-      // touchDrag: false,
-      // mouseDrag: false,
-      // pullDrag: false,
-      // nav: true,
-      // navText: ['<span class="arrow__left"></span>', '<span class="arrow__right">Далее</span>'],
-      onChange: function onChange(e) {
-        $('.counter').text('1 из ' + this.items().length);
-      }
+      touchDrag: false,
+      mouseDrag: false,
+      pullDrag: false
     });
     $(".arrow__right").click(function () {
       owl.trigger("next.owl.carousel");
     });
     $(".arrow__left").click(function () {
       owl.trigger("prev.owl.carousel");
-    }); // let owl = $('.owl-carousel');
-
+    });
     owl.on('changed.owl.carousel', function (e) {
       if ($('.owl-next').length) {
         var btnNext = document.querySelector('.owl-next');
-        console.log(btnNext);
         $('.counter').text(++e.page.index + ' из ' + e.item.count);
-        console.log("".concat(+e.page.index, " \u0438\u0437 ").concat(e.item.count));
 
         if (+e.page.index == e.item.count && +e.page.index != 0) {
-          console.log('end');
           btnNext.classList.add('owl-next--last');
         } else {
           btnNext.classList.remove('owl-next--last');
